@@ -88,8 +88,8 @@
                     </div>
                     <div class="main-chat overflow-auto">
                         <div class="container px-5 py-5  ">
-                            <div class="row" v-for="messageContainer in contacts">
-                                <div :class="messageContainer.messages.message === 'sent' ? 'col-5 mb-3 offset-7' : 'col-5 mb-3'">
+                            <div class="row" v-for="(messageContainer , index) in contacts">
+                                <div :class="messageContainer[index].messages.status === 'sent' ? 'col-5 mb-3 offset-7' : 'col-5 mb-3'">
                                     <div class="message personal-message  position-relative">
                                         <p class="m-0">{{messageContainer.messages.message}}</p>
                                         <span class="time text-gray position-absolute bottom-0 ">16:15</span>
