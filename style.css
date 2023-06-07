@@ -1,0 +1,33 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+    to top,
+    #d9dbd4 0%,
+    #d9dbd4 80%,
+    #009688 80%,
+    #009688 100%
+  );
+}
+
+main{
+    height: 100vh;
+}
+
+div.container.app{
+    height: 900px;
+    border: 1px solid black;
+    max-width: 1400px;
+}
+
+section.side-bar{
+    width: 500px;
+    height: 100%;
+    background-color: aqua;
+}
+
+section.chat{
+    width: calc(100% - 500px);
+    height: 100%;
+    background-color: brown;
+}
