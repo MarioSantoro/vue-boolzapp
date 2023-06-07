@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
         <main class="d-flex justify-content-center align-items-center">
@@ -50,7 +51,7 @@
                     </div>
                     <div class="main-sidebar bg-white overflow-auto">
                         <ul class="list-unstyled">
-                            <li v-for="(listItem , index) in contacts" class="p-3 d-flex justify-content-between" @click.stop="ChangeChat(index)">
+                            <li v-for="(listItem , index) in contacts" class="p-3 d-flex justify-content-between" @click="changeChat(index)">
                                 <div class="person d-flex">
                                     <div class="image-avatar">
                                         <img class="img-fluid" :src="listItem.avatar" alt="Avatar 1">
@@ -92,7 +93,7 @@
                                 <div  :class="messageContainer.status === 'sent' ? 'col-5 mb-3 offset-7' : 'col-5 mb-3 '">
                                     <div class="message position-relative" :class="messageContainer.status === 'sent' ? 'personal-message' : 'bg-white'">
                                         <p class="m-0">{{messageContainer.message}}</p>
-                                        <span class="time text-gray position-absolute bottom-0 ">16:15</span>
+                                        <span class="time text-gray position-absolute bottom-0 ">{{messageContainer.date}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@
                             <i class="fa-regular fa-face-smile fa-xl"></i>
                         </div>
                         <div class="search-bar">
-                            <input type="text" class="border-0 p-2" placeholder="Scrivi un messaggio">
+                            <input type="text" class="border-0 p-2" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="createNewMessage(newMessage)">
                         </div>
                         <div class="audio ">
                             <i class="fa-solid fa-microphone fa-xl"></i>

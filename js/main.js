@@ -1,3 +1,4 @@
+
 const {createApp} = Vue;
 createApp({
     data(){
@@ -19,7 +20,7 @@ createApp({
                             status: 'sent'
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            date: '10/01/2020 16:15',
                             message: 'Tutto fatto!',
                             status: 'received'
                         }
@@ -166,12 +167,22 @@ createApp({
                 }
             ],
             activeChat : 0,
+            newMessage : "",
         }
     },
 
     methods : {
-        ChangeChat(index){ 
+        changeChat(index){ 
             this.activeChat = index;
+        },
+
+        createNewMessage(text){
+            this.contacts[this.activeChat].messages.push({message : text , status : "sent"});
+            setTimeout(this.response,1000);
+        },
+
+        response(){
+            this.contacts[this.activeChat].messages.push({message : "Ok" , status : "recived"});
         }
     }
 }).mount("#app");
