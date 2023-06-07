@@ -88,22 +88,10 @@
                     </div>
                     <div class="main-chat overflow-auto">
                         <div class="container px-5 py-5  ">
-                            <div class="row">
-                                <div class="col-5 mb-2 offset-7">
+                            <div class="row" v-for="messageContainer in contacts">
+                                <div :class="messageContainer.messages.message === 'sent' ? 'col-5 mb-3 offset-7' : 'col-5 mb-3'">
                                     <div class="message personal-message  position-relative">
-                                        <p class="m-0">Hai portato a spasso il cane?</p>
-                                        <span class="time text-gray position-absolute bottom-0 ">16:15</span>
-                                    </div>
-                                </div>
-                                <div class="col-5 mb-2 offset-7">
-                                    <div class="message personal-message  position-relative">
-                                        <p class="m-0">Ricordati di stendere i panni</p>
-                                        <span class="time text-gray position-absolute bottom-0 ">16:15</span>
-                                    </div>
-                                </div>
-                                <div class="col-5 mb-2">
-                                    <div class="message bg-white position-relative">
-                                        <p class="m-0">Tutto fatto!</p>
+                                        <p class="m-0">{{messageContainer.messages.message}}</p>
                                         <span class="time text-gray position-absolute bottom-0 ">16:15</span>
                                     </div>
                                 </div>
