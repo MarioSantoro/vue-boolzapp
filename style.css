@@ -29,6 +29,10 @@ div.header-sidebar{
     background-color: #eaeaea;
 }
 
+div.main-sidebar{
+    height: calc(100% - 204px);
+}
+
 div.image-avatar ,
 div.notify-icon 
 {

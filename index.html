@@ -44,15 +44,15 @@
                             <i class="fa-solid fa-magnifying-glass position-absolute text-gray"></i>
                         </div>
                     </div>
-                    <div class="main-sidebar bg-white">
+                    <div class="main-sidebar bg-white overflow-auto">
                         <ul class="list-unstyled">
-                            <li v-for class="p-3 d-flex justify-content-between">
+                            <li v-for="(listItem , index) in contacts" class="p-3 d-flex justify-content-between">
                                 <div class="person d-flex">
                                     <div class="image-avatar">
-                                        <img class="img-fluid" src="img/avatar_1.jpg" alt="Avatar 1">
+                                        <img class="img-fluid" :src="listItem.avatar" alt="Avatar 1">
                                     </div>
                                     <div class="message ms-3">
-                                        <h5 class="m-0 ">Michele</h5>
+                                        <h5 class="m-0 ">{{listItem.name}}</h5>
                                         <p class="m-0 text-gray">Ultimo messaggio inviato</p>
                                     </div>
                                 </div>
