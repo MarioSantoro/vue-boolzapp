@@ -1,6 +1,7 @@
 body{
     width: 100%;
     height: 100vh;
+    font-family: 'Lato', sans-serif;
     background: linear-gradient(
     to top,
     #d9dbd4 0%,
@@ -16,7 +17,6 @@ main{
 
 div.container.app{
     height: 900px;
-    border: 1px solid black;
     max-width: 1400px;
 }
 
@@ -25,12 +25,46 @@ section.side-bar{
     height: 100%;
 }
 
-div.header-sidebar{
+div.header-sidebar ,
+div.header-chat
+{
     background-color: #eaeaea;
 }
 
 div.main-sidebar{
     height: calc(100% - 204px);
+}
+div.main-sidebar ul li{
+    border-bottom: 1px solid #ece2e2;
+    cursor: pointer;
+}
+
+div.main-sidebar ul li:hover{
+    background-color: #ccc;
+}
+
+div.main-chat{
+    height: calc(100% - (66px + 56px));
+    background-image: url(img/mine.jpg);
+} 
+
+div.message{
+    padding: .77rem .77rem 1rem .77rem;
+    border-radius: 1rem;
+}
+
+div.message span{
+    font-size: .66rem;
+    right: 10px;
+}
+
+div.footer-chat{
+    background-color: #f3eeea;
+}
+
+div.footer-chat input{
+    width: 700px;
+    border-radius: .66rem;
 }
 
 div.image-avatar ,
@@ -58,9 +92,12 @@ div.search-bar i{
 section.chat{
     width: calc(100% - 500px);
     height: 100%;
-    background-color: brown;
 }
 
 .text-gray{
     color: rgba(126, 116, 116, 0.452);
+}
+
+.personal-message{
+    background-color: #d5f9ba;
 }
