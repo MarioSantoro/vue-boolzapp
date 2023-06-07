@@ -23,11 +23,35 @@ div.container.app{
 section.side-bar{
     width: 500px;
     height: 100%;
-    background-color: aqua;
+}
+
+div.personal-profile{
+    background-color: #eaeaea;
+}
+
+div.image-avatar ,
+div.notify-icon 
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+div.notifications{
+    background-color: #8edafc;
+}
+
+div.notify-icon i{
+    color: #8edafc;
 }
 
 section.chat{
     width: calc(100% - 500px);
     height: 100%;
     background-color: brown;
+}
+
+.text-gray{
+    color: rgba(126, 116, 116, 0.452);
 }
