@@ -50,7 +50,7 @@
                     </div>
                     <div class="main-sidebar bg-white overflow-auto">
                         <ul class="list-unstyled">
-                            <li v-for="(listItem , index) in contacts" class="p-3 d-flex justify-content-between">
+                            <li v-for="(listItem , index) in contacts" class="p-3 d-flex justify-content-between" @click.stop="ChangeChat(index)">
                                 <div class="person d-flex">
                                     <div class="image-avatar">
                                         <img class="img-fluid" :src="listItem.avatar" alt="Avatar 1">
@@ -72,10 +72,10 @@
                         <div class="personal-profile d-flex justify-content-between p-2 align-items-center">
                             <div class="avatar d-flex align-items-center">
                                 <div class="image-avatar">
-                                    <img class="img-fluid" :src="contacts[0].avatar" alt="">
+                                    <img class="img-fluid" :src="contacts[activeChat].avatar" alt="">
                                 </div>
                                 <div class="name-access ms-3">
-                                    <p class="m-0">{{contacts[0].name}}</p>
+                                    <p class="m-0">{{contacts[activeChat].name}}</p>
                                     <p class="m-0 text-gray">Ultimo accesso oggi alle 12:00</p>
                                 </div>
                             </div>
@@ -88,10 +88,10 @@
                     </div>
                     <div class="main-chat overflow-auto">
                         <div class="container px-5 py-5  ">
-                            <div class="row" v-for="(messageContainer , index) in contacts">
-                                <div :class="messageContainer[index].messages.status === 'sent' ? 'col-5 mb-3 offset-7' : 'col-5 mb-3'">
-                                    <div class="message personal-message  position-relative">
-                                        <p class="m-0">{{messageContainer.messages.message}}</p>
+                            <div class="row" v-for="(messageContainer ) in contacts[activeChat].messages">
+                                <div  :class="messageContainer.status === 'sent' ? 'col-5 mb-3 offset-7' : 'col-5 mb-3 '">
+                                    <div class="message position-relative" :class="messageContainer.status === 'sent' ? 'personal-message' : 'bg-white'">
+                                        <p class="m-0">{{messageContainer.message}}</p>
                                         <span class="time text-gray position-absolute bottom-0 ">16:15</span>
                                     </div>
                                 </div>
