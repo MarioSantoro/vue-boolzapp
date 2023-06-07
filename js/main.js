@@ -177,12 +177,12 @@ createApp({
         },
 
         createNewMessage(text){
-            this.contacts[this.activeChat].messages.push({message : text , status : "sent"});
+            this.contacts[this.activeChat].messages.push({message : text , status : "sent" });
             setTimeout(this.response,1000);
         },
 
         response(){
-            this.contacts[this.activeChat].messages.push({message : "Ok" , status : "recived"});
+            this.contacts[this.activeChat].messages.push({message : "Ok" , status : "received"});
         }
     }
 }).mount("#app");

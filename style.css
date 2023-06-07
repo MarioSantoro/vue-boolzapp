@@ -18,6 +18,7 @@ main{
 div.container.app{
     height: 900px;
     max-width: 1400px;
+    min-width: 1300px;
 }
 
 section.side-bar{
