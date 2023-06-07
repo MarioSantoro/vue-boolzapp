@@ -179,6 +179,7 @@ createApp({
         createNewMessage(text){
             this.contacts[this.activeChat].messages.push({message : text , status : "sent" });
             setTimeout(this.response,1000);
+            this.newMessage = "";
         },
 
         response(){
