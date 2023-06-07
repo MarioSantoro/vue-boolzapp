@@ -25,7 +25,7 @@ section.side-bar{
     height: 100%;
 }
 
-div.personal-profile{
+div.header-sidebar{
     background-color: #eaeaea;
 }
 
@@ -44,6 +44,11 @@ div.notifications{
 
 div.notify-icon i{
     color: #8edafc;
+}
+
+div.search-bar i{
+    left: 5%;
+    top: 36%;
 }
 
 section.chat{
