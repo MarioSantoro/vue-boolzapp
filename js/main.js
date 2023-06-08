@@ -1,3 +1,9 @@
+let DateTime = luxon.DateTime;
+let dt = DateTime.now();
+let hour = dt.hour;
+let minute = dt.minute;
+hour = hour.toString();
+minute = minute.toString();
 
 const {createApp} = Vue;
 createApp({
@@ -169,6 +175,7 @@ createApp({
             activeChat : 0,
             newMessage : "",
             namePerson : "",
+            dateMy : hour + ":" + minute,
         }
     },
 
