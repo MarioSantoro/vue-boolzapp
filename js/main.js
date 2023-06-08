@@ -196,6 +196,11 @@ createApp({
                     person.visible = false;
                 };
             });   
+        },
+
+        deleteMessage(index){
+            this.contacts[index].messages.splice(index ,1);
+            console.log(index)
         }
     }
 }).mount("#app");

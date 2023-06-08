@@ -54,6 +54,32 @@ div.message{
     border-radius: 1rem;
 }
 
+div.message i{
+    display: none;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+div.delete{
+    display: none;
+    right: 0;
+    top: 20px;
+    z-index: 3;
+}
+
+div.delete p {
+    cursor: pointer;
+}
+
+div.message:hover i{
+    display: block;
+}
+
+div.message div.info-delete:hover div.delete{
+    display: block;
+} 
+
 div.message span{
     font-size: .66rem;
     right: 10px;

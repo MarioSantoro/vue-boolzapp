@@ -91,10 +91,18 @@
                     </div>
                     <div class="main-chat overflow-auto">
                         <div class="container px-5 py-5  ">
-                            <div class="row" v-for="(messageContainer ) in contacts[activeChat].messages">
+                            <div class="row" v-for="(messageContainer , index ) in contacts[activeChat].messages">
                                 <div  :class="messageContainer.status === 'sent' ? 'col-5 mb-3 offset-7' : 'col-5 mb-3 '">
                                     <div class="message position-relative" :class="messageContainer.status === 'sent' ? 'personal-message' : 'bg-white'">
                                         <p class="m-0">{{messageContainer.message}}</p>
+                                        <div v-if="messageContainer.status === 'sent'" class="info-delete">
+                                            <i class="fa-solid fa-chevron-down position-absolute text-gray"></i>
+                                            <div class="delete position-absolute bg-white p-3">
+                                                <p >Message info</p>
+                                                <p @click="deleteMessage(index)">Delete message</p>
+                                            </div>
+                                        </div>
+                                        
                                         <span class="time text-gray position-absolute bottom-0 ">{{messageContainer.date}}</span>
                                     </div>
                                 </div>
