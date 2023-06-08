@@ -187,12 +187,11 @@ createApp({
             this.contacts[this.activeChat].messages.push({message : "Ok" , status : "received"});
         },
 
-        searchName(){
-            this.namePerson = this.namePerson.charAt(0).toUpperCase() + this.namePerson.slice(1);
-            // this.activeChat è una prova per vedere se andava il tutto
+        searchName(contact){
+            contact = contact.charAt(0).toUpperCase() + contact.slice(1);
             this.contacts.forEach( (person , index) => {
-                if(person.name.includes(this.namePerson)){
-                    console.log("yes")
+                if(person.name.includes(contact)){
+                    person.visible = true;
                 }else{
                     person.visible = false;
                 };

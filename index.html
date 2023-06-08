@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="search-bar p-2 position-relative">
-                            <input class="w-100 ps-5 py-2 border-0" type="search" placeholder="Cerca o inizia una nuova chat" v-model="namePerson" @keyup.enter="searchName">
+                            <input class="w-100 ps-5 py-2 border-0" type="search" placeholder="Cerca o inizia una nuova chat" v-model="namePerson" @keydown="searchName(namePerson)">
                             <i class="fa-solid fa-magnifying-glass position-absolute text-gray"></i>
                         </div>
                     </div>
