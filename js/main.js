@@ -198,9 +198,8 @@ createApp({
             });   
         },
 
-        deleteMessage(index){
-            this.contacts[index].messages.splice(index ,1);
-            console.log(index)
+        deleteMessage(chatindex){
+            this.contacts[this.activeChat].messages.splice(chatindex ,1);
         }
     }
 }).mount("#app");
