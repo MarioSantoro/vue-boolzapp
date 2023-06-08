@@ -35,12 +35,12 @@ div.header-chat
 div.main-sidebar{
     height: calc(100% - 204px);
 }
-div.main-sidebar ul li{
+div.main-sidebar ul div.li{
     border-bottom: 1px solid #ece2e2;
     cursor: pointer;
 }
 
-div.main-sidebar ul li:hover{
+div.main-sidebar ul div.li:hover{
     background-color: #ccc;
 }
 

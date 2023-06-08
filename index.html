@@ -45,24 +45,26 @@
                             </div>
                         </div>
                         <div class="search-bar p-2 position-relative">
-                            <input class="w-100 ps-5 py-2 border-0" type="search" placeholder="Cerca o inizia una nuova chat">
+                            <input class="w-100 ps-5 py-2 border-0" type="search" placeholder="Cerca o inizia una nuova chat" v-model="namePerson" @keyup.enter="searchName">
                             <i class="fa-solid fa-magnifying-glass position-absolute text-gray"></i>
                         </div>
                     </div>
                     <div class="main-sidebar bg-white overflow-auto">
                         <ul class="list-unstyled">
-                            <li v-for="(listItem , index) in contacts" class="p-3 d-flex justify-content-between" @click="changeChat(index)">
-                                <div class="person d-flex">
-                                    <div class="image-avatar">
-                                        <img class="img-fluid" :src="listItem.avatar" alt="Avatar 1">
+                            <li v-for="(listItem , index) in contacts">
+                                <div class="li p-3 d-flex justify-content-between" @click="changeChat(index)" v-if="listItem.visible === true">
+                                    <div class="person d-flex" >
+                                        <div class="image-avatar">
+                                            <img class="img-fluid" :src="listItem.avatar" alt="Avatar 1">
+                                        </div>
+                                        <div class="text ms-3">
+                                            <h5 class="m-0 ">{{listItem.name}}</h5>
+                                            <p class="m-0 text-gray">Ultimo messaggio inviato</p>
+                                        </div>
                                     </div>
-                                    <div class="text ms-3">
-                                        <h5 class="m-0 ">{{listItem.name}}</h5>
-                                        <p class="m-0 text-gray">Ultimo messaggio inviato</p>
+                                    <div class="time">
+                                        <span class="text-gray fs-6">12:00</span>
                                     </div>
-                                </div>
-                                <div class="time">
-                                    <span class="text-gray fs-6">12:00</span>
                                 </div>
                             </li>
                         </ul>

@@ -168,6 +168,7 @@ createApp({
             ],
             activeChat : 0,
             newMessage : "",
+            namePerson : "",
         }
     },
 
@@ -184,6 +185,15 @@ createApp({
 
         response(){
             this.contacts[this.activeChat].messages.push({message : "Ok" , status : "received"});
+        },
+
+        searchName(){
+            this.namePerson = this.namePerson.charAt(0).toUpperCase() + this.namePerson.slice(1);
+            // this.activeChat è una prova per vedere se andava il tutto
+            if(this.contacts[this.activeChat].name.includes(this.namePerson)){
+                this.contacts[this.activeChat].visible = false;
+            }; 
+            
         }
     }
 }).mount("#app");
