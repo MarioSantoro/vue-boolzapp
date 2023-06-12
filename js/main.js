@@ -171,11 +171,20 @@ createApp({
                         }
                     ],
                 }
+                
             ],
             activeChat : 0,
             newMessage : "",
             namePerson : "",
             dateMy : hour + ":" + minute,
+            answers : [
+                "Buona giornata", 
+                "Me gusta il cha cha cha" ,
+                "It's over 9000!!!!" ,
+                "Pillola rossa o blu?" ,
+                "Cocco bello Cocco frescooooo!!"
+            ]
+            
         }
     },
 
@@ -191,7 +200,7 @@ createApp({
         },
 
         response(){
-            this.contacts[this.activeChat].messages.push({message : "Ok" , status : "received"});
+            this.contacts[this.activeChat].messages.push({message : this.answers[this.randomAnswers()] , status : "received"});
         },
 
         searchName(contact){
@@ -207,6 +216,11 @@ createApp({
 
         deleteMessage(chatindex){
             this.contacts[this.activeChat].messages.splice(chatindex ,1);
+        },
+
+        randomAnswers(){
+            const answer = Math.floor(Math.random() * this.answers.length);
+            return answer;
         }
     }
 }).mount("#app");
